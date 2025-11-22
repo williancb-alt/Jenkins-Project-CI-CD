@@ -1,6 +1,5 @@
 FROM jenkins/agent:alpine-jdk17
-USER root
-RUN apk add python3
-RUN apk add py3-pip
-USER jenkins
 
+USER root
+RUN apk add --no-cache python3 py3-pip py3-virtualenv
+USER jenkins
