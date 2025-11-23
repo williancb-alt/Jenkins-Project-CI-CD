@@ -18,7 +18,7 @@ pipeline {
             steps {
                 echo "Building.."
                 sh '''
-                'Is this real'
+                '''
             }
         }
         stage('Test') {
