@@ -8,16 +8,12 @@ pipeline {
         pollSCM '* * * * *'
     }
     stages {
-        stage('Inspect Environment') {
-            steps {
-                sh 'dpkg -l | grep python'
-                sh 'pip3 list'
-            }
-        }
         stage('Build') {
             steps {
                 echo "Building.."
                 sh '''
+                cd myapp
+                pip install -r requirements.txt
                 '''
             }
         }
@@ -26,6 +22,8 @@ pipeline {
                 echo "Testing.."
                 sh '''
                 cd myapp
+                python3 hello.py
+                python3 hello.py --name=Willian
                 '''
             }
         }
