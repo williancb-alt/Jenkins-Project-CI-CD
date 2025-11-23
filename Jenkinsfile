@@ -22,11 +22,8 @@ pipeline {
         // Build stage placeholder, demonstrates a simple online connectivity test
         stage('Build') {
             steps {
-                echo "Building.."
-                sh '''
-                # Check connectivity to example.com (simple curl to verify network)
-                curl -I https://example.com
-                '''
+                echo "Building Java project with Maven..."
+                sh 'mvn clean package'
             }
         }
         // Test stage placeholder, change directory to app location (if any real commands exist, add here)
