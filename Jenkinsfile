@@ -12,7 +12,6 @@ pipeline {
             steps {
                 sh 'dpkg -l | grep python'
                 sh 'pip3 list'
-                'I hope this works'
             }
         }
         stage('Build') {
